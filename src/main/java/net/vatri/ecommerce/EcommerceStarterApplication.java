@@ -57,12 +57,12 @@ public class EcommerceStarterApplication{
     private String redisHost;
     @Value("${redis.port}")
     private int redisPort;
-    @Value("${redis.password}")
+    @Value("${redis.password:}")
     private String redisPassword;
 //    @Bean
     private Jedis redisCliFactory(){
         Jedis jedis = new Jedis(redisHost, redisPort);
-        jedis.auth(redisPassword);
+        //jedis.auth(redisPassword);
         return jedis;
     }
 
